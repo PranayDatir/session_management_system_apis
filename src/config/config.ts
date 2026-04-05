@@ -20,7 +20,7 @@ const SERVER_TOKEN_EXPIRETIME = process.env?.['SERVER_TOKEN_EXPIRETIME'] || "7d"
 const MONGO_URL = `mongodb+srv://${MONGO_USERNAME}:${MONGO_PASSWORD}@${MONGODB_HOST}${MONGODB_DB_NAME}?appName=Cluster0`;
 
 
-const SERVER_PORT = 9098;
+const SERVER_PORT = process.env?.['PORT'] || 9098;
 
 const NODE_ENV =
   process.env?.['NODE_ENV'] || "development";
@@ -41,7 +41,7 @@ const config = {
     dbName: MONGODB_DB_NAME,
   },
   server: {
-    // port: SERVER_PORT,
+    port: SERVER_PORT,
     token: {
       expireTime: SERVER_TOKEN_EXPIRETIME,
       issuer: SERVER_TOKEN_ISSUER,

@@ -98,7 +98,7 @@ const StartServer = () => {
         });
     });
 
-    http.createServer(router).listen(9098, () => console.info(`Server is running on port ${9098}`));
+    http.createServer(router).listen(config.server.port, () => console.info(`Server is running on port ${config.server.port}`));
 };
 
 
